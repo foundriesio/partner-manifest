@@ -5,7 +5,7 @@
           name="subscriber-overrides" />
 
   <project name="meta-partner-variscite"
-           revision="d0007b74c4f5a3be79af654b4c6bb95b242d1610"
+           revision="40e105dfceb172ad15e5c5e58208f8f09fb485f0"
            path="layers/meta-partner-variscite"
            remote="subscriber-overrides"/>
 </manifest>
