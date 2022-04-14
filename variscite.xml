@@ -1,11 +1,11 @@
 <manifest>
   <include name="default.xml" />
 
-  <remote fetch="https://source.foundries.io/factories/variscite"
-          name="subscriber-overrides" />
+  <remote fetch="https://github.com/foundriesio"
+          name="partner-variscite" />
 
   <project name="meta-partner-variscite"
            revision="c461c56874c7f08693027ba152d0b2011386c971"
            path="layers/meta-partner-variscite"
-           remote="subscriber-overrides"/>
+           remote="partner-variscite"/>
 </manifest>
