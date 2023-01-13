@@ -1,9 +1,25 @@
 <manifest>
     <include name="default.xml" />
 
+    <remote fetch="https://gitlab.com/mediatek/aiot/rity" name="mediatek"/>
     <remote fetch="https://source.foundries.io/factories/mediatek"
             name="subscriber-overrides" />
 
+    <remove-project name="meta-freescale"/>
+    <remove-project name="meta-freescale-3rdparty"/>
+    <remove-project name="meta-intel"/>
+    <remove-project name="meta-raspberrypi"/>
+    <remove-project name="meta-st-stm32mp"/>
+    <remove-project name="meta-xilinx"/>
+    <remove-project name="meta-xilinx-tools"/>
+    <remove-project name="meta-tegra"/>
+    <remove-project name="meta-sunxi"/>
+    <remove-project name="meta-ti"/>
+
+    <project name="meta-mediatek-bsp"
+             revision="dd083ca7a3b4a98e3b2f1a9611da4d0b49778f6b"
+             path="layers/meta-mediatek-bsp"
+             remote="mediatek"/>
     <project name="meta-partner-mediatek"
              revision="master"
              path="layers/meta-partner-mediatek"
