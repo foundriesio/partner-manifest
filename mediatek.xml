@@ -21,7 +21,7 @@
              path="layers/meta-mediatek-bsp"
              remote="mediatek"/>
     <project name="meta-partner-mediatek"
-             revision="master"
+             revision="1883599ca95831368ea63f3c8ad6cfb4d58a7418"
              path="layers/meta-partner-mediatek"
              remote="subscriber-overrides"/>
 </manifest>
