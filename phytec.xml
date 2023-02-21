@@ -1,11 +1,17 @@
 <manifest>
     <include name="default.xml" />
 
+    <remote fetch="https://github.com/phytec"
+            name="phytec" />
     <remote fetch="https://source.foundries.io/factories/phytec"
             name="subscriber-overrides" />
 
+    <project name="meta-phytec"
+             revision="273061960cf88913e667d70b79751fc15c609b05"
+             path="layers/meta-phytec"
+             remote="phytec"/>
     <project name="meta-partner-phytec"
-             revision="master"
+             revision="f03a77bb70e4d5b095e7c7c5380a83d970438785"
              path="layers/meta-partner-phytec"
              remote="subscriber-overrides"/>
 </manifest>
