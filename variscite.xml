@@ -3,7 +3,13 @@
 
   <remote fetch="https://github.com/foundriesio"
           name="partner-variscite" />
+  <remote fetch="https://github.com/varigit"
+          name="varigit" />
 
+  <project name="meta-variscite-bsp"
+           revision="b59aa8a000ff59aa0222ab134259dcf5c3e38881"
+           path="layers/meta-variscite-bsp"
+           remote="varigit"/>
   <project name="meta-partner-variscite"
            revision="c461c56874c7f08693027ba152d0b2011386c971"
            path="layers/meta-partner-variscite"
