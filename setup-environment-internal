@@ -136,7 +136,7 @@ export PATH=$(echo "$PATH" |
         awk -F: '{for (i=1;i<=NF;i++) { if ( !x[$i]++ ) printf("%s:",$i); }}' |
         sed 's/:$//')
 # Make sure Bitbake doesn't filter out the following variables from our env
-export BB_ENV_EXTRAWHITE="MACHINE DISTRO TCLIBC TCMODE GIT_PROXY_COMMAND \
+export BB_ENV_PASSTHROUGH_ADDITIONS="MACHINE DISTRO TCLIBC TCMODE GIT_PROXY_COMMAND \
         http_proxy ftp_proxy https_proxy all_proxy ALL_PROXY no_proxy \
         SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE \
         BB_NUMBER_THREADS BB_LOGCONFIG BB_CONSOLELOG"
@@ -166,6 +166,11 @@ if [ ! -f "conf/keys/dev.key" -a ! -f "conf/keys/dev.crt" ]; then
     ln -sf "${MANIFESTS}"/conf/keys/dev.key conf/keys/dev.key
     ln -sf "${MANIFESTS}"/conf/keys/dev.crt conf/keys/dev.crt
 fi
+# Copy default SPL development keys if not set by the user
+if [ ! -f "conf/keys/spldev.key" -a ! -f "conf/keys/spldev.crt" ]; then
+    ln -sf "${MANIFESTS}"/conf/keys/spldev.key conf/keys/spldev.key
+    ln -sf "${MANIFESTS}"/conf/keys/spldev.crt conf/keys/spldev.crt
+fi
 # Copy default u-boot development keys if not set by the user
 if [ ! -f "conf/keys/ubootdev.key" -a ! -f "conf/keys/ubootdev.crt" ]; then
     ln -sf "${MANIFESTS}"/conf/keys/ubootdev.key conf/keys/ubootdev.key
@@ -181,10 +186,23 @@ if [ ! -f "conf/keys/privkey_modsign.pem" -a ! -f "conf/keys/x509_modsign.crt" ]
     ln -sf "${MANIFESTS}"/conf/keys/privkey_modsign.pem conf/keys/privkey_modsign.pem
     ln -sf "${MANIFESTS}"/conf/keys/x509_modsign.crt conf/keys/x509_modsign.crt
 fi
+# Link default TF-A development keys if not set by the user
+if [ ! -d "conf/keys/tf-a" ]; then
+    ln -sf "${MANIFESTS}"/conf/keys/tf-a conf/keys/tf-a
+fi
+# Link default UEFI development keys and certificates if not set by the user
+if [ ! -d "conf/keys/uefi" ]; then
+    ln -sf "${MANIFESTS}"/conf/keys/uefi conf/keys/uefi
+fi
 
 # Factory specific keys (unique per factory)
 if [ -d "${MANIFESTS}"/factory-keys ]; then
     mkdir -p conf/factory-keys
+    # Copy default factory SPL development keys if not set by the user
+    if [ ! -f "conf/factory-keys/spldev.key" -a ! -f "conf/factory-keys/spldev.crt" ]; then
+        ln -sf "${MANIFESTS}"/factory-keys/spldev.key conf/factory-keys/spldev.key
+        ln -sf "${MANIFESTS}"/factory-keys/spldev.crt conf/factory-keys/spldev.crt
+    fi
     # Copy default factory u-boot development keys if not set by the user
     if [ ! -f "conf/factory-keys/ubootdev.key" -a ! -f "conf/factory-keys/ubootdev.crt" ]; then
         ln -sf "${MANIFESTS}"/factory-keys/ubootdev.key conf/factory-keys/ubootdev.key
@@ -199,6 +217,14 @@ if [ -d "${MANIFESTS}"/factory-keys ]; then
     if [ ! -f "conf/factory-keys/privkey_modsign.pem" -a ! -f "conf/factory-keys/x509_modsign.crt" ]; then
         ln -sf "${MANIFESTS}"/factory-keys/privkey_modsign.pem conf/factory-keys/privkey_modsign.pem
         ln -sf "${MANIFESTS}"/factory-keys/x509_modsign.crt conf/factory-keys/x509_modsign.crt
+    fi
+    # Link custom TF-A development keys set by the user
+    if [ -d "${MANIFESTS}"/factory-keys/tf-a -a ! -d "conf/factory-keys/tf-a" ]; then
+        ln -sf "${MANIFESTS}"/factory-keys/tf-a conf/factory-keys/tf-a
+    fi
+    # Link custom UEFI development keys and certificates set by the user
+    if [ -d "${MANIFESTS}"/factory-keys/uefi -a ! -d "conf/factory-keys/uefi" ]; then
+        ln -sf "${MANIFESTS}"/factory-keys/uefi conf/factory-keys/uefi
     fi
 fi
 
@@ -228,6 +254,9 @@ SDKMACHINE ?= "${SDKMACHINE}"
 
 # Extra options that can be changed by the user
 INHERIT += "rm_work"
+INHERIT += "buildstats buildstats-summary"
+INHERIT += "buildhistory"
+BUILDHISTORY_COMMIT = "1"
 EOF
 
 if [ ! -e conf/site.conf ]; then
@@ -249,13 +278,38 @@ DEPLOY_DIR = "${BUILDDIR}/deploy"
 # Go through the Firewall
 #HTTP_PROXY = "http://${PROXYHOST}:${PROXYPORT}/"
 _EOF
+
+# LmP default mirrors cache location
+LMP_LOCAL_SSTATE_MIRRORS="${LMP_LOCAL_SSTATE_MIRRORS:-/yocto/lmp/cache/sstate-mirrors}"
+LMP_LOCAL_PRE_MIRRORS="${LMP_LOCAL_PRE_MIRRORS:-/yocto/lmp/cache/downloads-mirrors}"
+
+if [ -d "${LMP_LOCAL_SSTATE_MIRRORS}" ]; then
+    cat >> conf/site.conf <<_EOF
+
+# State cache mirror is available locally on the file system
+SSTATE_MIRRORS += "file://.* file://${LMP_LOCAL_SSTATE_MIRRORS}/PATH"
+_EOF
+fi
+
+if [ -d "${LMP_LOCAL_PRE_MIRRORS}" ]; then
+    cat >> conf/site.conf <<_EOF
+
+# Download mirror is available locally on the file system
+PREMIRRORS += " \
+    git://.*/.* file://${LMP_LOCAL_PRE_MIRRORS} \
+    ftp://.*/.* file://${LMP_LOCAL_PRE_MIRRORS} \
+    http://.*/.* file://${LMP_LOCAL_PRE_MIRRORS} \
+    https://.*/.* file://${LMP_LOCAL_PRE_MIRRORS} \
+    "
+_EOF
+fi
 fi
 
 # Handle EULA , if needed. This is a generic method to handle BSPs
 # that might (or not) come with a EULA. If a machine has a EULA, we
 # assume that its corresponding layers has conf/EULA/$MACHINE file
 # with the EULA text, which we will display to the user and request
-# for acceptance. If accepted, the variable ACCEPT_EULA_$MACHINE is
+# for acceptance. If accepted, the variable ACCEPT_EULA:$MACHINE is
 # set to 1 in auto.conf, which can later be used by the BSP.
 # If the env variable EULA_$MACHINE is set it is used by default,
 # without prompting the user.
@@ -271,8 +325,8 @@ if [ -n "$EULA" ]; then
     # NOTE: indirect reference / dynamic variable
     if [ -n "${!EULA_MACHINE}" ]; then
         # the EULA_$MACHINE variable is set in the environment, so we just
-        # configure # ACCEPT_EULA_$MACHINE in auto.conf
-        echo "ACCEPT_EULA_$MACHINE = \"${!EULA_MACHINE}\"" >> conf/auto.conf
+        # configure # ACCEPT_EULA:$MACHINE in auto.conf
+        echo "ACCEPT_EULA:$MACHINE = \"${!EULA_MACHINE}\"" >> conf/auto.conf
     else
         # so we need to ask user if he/she accepts the EULA:
         cat <<EOF
@@ -311,7 +365,7 @@ EOF
                 case "$REPLY" in
                     y|Y)
                         echo "EULA has been accepted."
-                        echo "ACCEPT_EULA_$MACHINE = \"1\"" >> conf/auto.conf
+                        echo "ACCEPT_EULA:$MACHINE = \"1\"" >> conf/auto.conf
                         ;;
                     n|N)
                         echo "EULA has not been accepted."
@@ -343,9 +397,20 @@ Your build environment has been configured with:
 You can now run 'bitbake <target>'
 
 Some common targets are:
+EOF
+
+if [ "${DISTRO}" = 'lmp-mfgtool' ]; then
+        cat <<EOF
+    mfgtool-files           - MFGTOOL Support Files and Binaries for board flashing and provisioning
+
+EOF
+else
+
+        cat <<EOF
     lmp-mini-image          - minimal OSTree + OTA capable image
     lmp-base-console-image  - mini-image + Docker container runtime
     lmp-gateway-image       - base-console-image + edge gateway related utilities
     lmp-factory-image       - default (and only available) at FoundriesFactory
 
 EOF
+fi
