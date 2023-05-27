@@ -2,10 +2,20 @@
     <include name="default.xml" />
 
     <remote fetch="https://source.foundries.io/factories/toradex"
-            name="subscriber-overrides" />
+            name="toradex-partner" />
+    <remote fetch="https://git.toradex.com"
+            name="toradex-git" />
 
+    <project name="meta-toradex-bsp-common.git"
+             revision="73aeddc78590a2b530cda6fd8daba4e5ec921ff4"
+             path="layers/meta-toradex-bsp-common"
+             remote="toradex-git"/>
+    <project name="meta-toradex-nxp.git"
+             revision="0dc187478a0d363683a6c5ba59b042e56aa87e81"
+             path="layers/meta-toradex-nxp"
+             remote="toradex-git"/>
     <project name="meta-partner-toradex"
-             revision="master"
+             revision="5e18886d7cb3947ef47f5e39331d4c51269cd7e0"
              path="layers/meta-partner-toradex"
-             remote="subscriber-overrides"/>
+             remote="toradex-partner"/>
 </manifest>
