@@ -1,0 +1,11 @@
+<manifest>
+    <include name="default.xml" />
+
+    <remote fetch="https://source.foundries.io/factories/toradex"
+            name="subscriber-overrides" />
+
+    <project name="meta-partner-toradex"
+             revision="master"
+             path="layers/meta-partner-toradex"
+             remote="subscriber-overrides"/>
+</manifest>
