@@ -6,12 +6,13 @@
     <remote fetch="https://git.toradex.com"
             name="toradex-git" />
 
+    <!-- BASED on 6.2.0 release: https://git.toradex.com/cgit/toradex-manifest.git/tree/bsp/pinned-tdx.xml?h=6.2.0 //-->
     <project name="meta-toradex-bsp-common.git"
-             revision="73aeddc78590a2b530cda6fd8daba4e5ec921ff4"
+             revision="a969df0f7e2188271e80f67f97ab1a0bc0e67b9c"
              path="layers/meta-toradex-bsp-common"
              remote="toradex-git"/>
     <project name="meta-toradex-nxp.git"
-             revision="0dc187478a0d363683a6c5ba59b042e56aa87e81"
+             revision="0e6c25e8c7ad105daf6c8737fbdee1c97c4edb41"
              path="layers/meta-toradex-nxp"
              remote="toradex-git"/>
     <project name="meta-partner-toradex"
