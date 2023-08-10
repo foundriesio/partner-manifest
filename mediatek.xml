@@ -13,7 +13,6 @@
     <remove-project name="meta-xilinx"/>
     <remove-project name="meta-xilinx-tools"/>
     <remove-project name="meta-tegra"/>
-    <remove-project name="meta-sunxi"/>
     <remove-project name="meta-ti"/>
 
     <project name="meta-mediatek-bsp"
