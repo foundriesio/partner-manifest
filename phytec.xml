@@ -7,7 +7,7 @@
             name="subscriber-overrides" />
 
     <project name="meta-phytec"
-             revision="829ce6f0d7b0e4cf8a5775ec74d437ba2238e4cf"
+             revision="3205f9a905517441a54f24b0baf7eec6448b4422"
              path="layers/meta-phytec"
              remote="phytec"/>
     <project name="meta-partner-phytec"
