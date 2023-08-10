@@ -16,7 +16,7 @@
     <remove-project name="meta-ti"/>
 
     <project name="meta-mediatek-bsp"
-             revision="91120bb02e432a61aa699307d42b1c98f87cddd0"
+             revision="8a181b701cceeec031250558bb6b7d6e906eaea3"
              path="layers/meta-mediatek-bsp"
              remote="mediatek"/>
     <project name="meta-partner-mediatek"
