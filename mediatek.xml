@@ -24,7 +24,7 @@
              path="layers/meta-rity"
              remote="mediatek"/>
     <project name="meta-partner-mediatek"
-             revision="c017ec8480a88a3e8d8d0bd960a640a21ceec27c"
+             revision="06430aae1ccf614e6b0ae9458f6366b5988d48ab"
              path="layers/meta-partner-mediatek"
              remote="subscriber-overrides"/>
 </manifest>
