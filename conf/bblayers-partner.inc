@@ -1,8 +1,10 @@
 BSPLAYERS = " \
+  ${OEROOT}/layers/meta-openembedded/meta-multimedia \
   ${OEROOT}/layers/meta-arm/meta-arm \
   ${OEROOT}/layers/meta-arm/meta-arm-toolchain \
   ${OEROOT}/layers/meta-yocto/meta-yocto-bsp \
   ${OEROOT}/layers/meta-mediatek-bsp \
+  ${OEROOT}/layers/meta-rity/meta \
   ${OEROOT}/layers/meta-lmp/meta-lmp-bsp \
 "
 
