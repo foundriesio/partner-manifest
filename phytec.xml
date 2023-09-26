@@ -11,7 +11,7 @@
              path="layers/meta-phytec"
              remote="phytec"/>
     <project name="meta-partner-phytec"
-             revision="ef4556072046cb8ef861eb00cbe46f92ad4b8087"
+             revision="ee16da44b63a13a14b1e7546ab014f80d4b6cc1a"
              path="layers/meta-partner-phytec"
              remote="subscriber-overrides"/>
 </manifest>
