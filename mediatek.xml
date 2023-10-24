@@ -16,12 +16,16 @@
     <remove-project name="meta-ti"/>
 
     <project name="meta-mediatek-bsp"
-             revision="8a181b701cceeec031250558bb6b7d6e906eaea3"
+             revision="cbdeb08971c7e705f909351340e29977cf30356e"
              path="layers/meta-mediatek-bsp"
              remote="mediatek"/>
     <project name="meta-rity"
-             revision="552c27e1f393250e882ca16511e304a8a40633f4"
+             revision="2b3f3f14daa695469025086fe638da8ebe4a848e"
              path="layers/meta-rity"
+             remote="mediatek"/>
+    <project name="meta-mediatek-bluedroid"
+             revision="71ae5cfbc089d1a1c64e3e76e316f4982635cb1a"
+             path="layers/meta-mediatek-bluedroid"
              remote="mediatek"/>
     <project name="meta-partner-mediatek"
              revision="891822524b24c4db194fbcddaacd85e18d5f2167"

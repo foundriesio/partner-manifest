@@ -5,6 +5,7 @@ BSPLAYERS = " \
   ${OEROOT}/layers/meta-yocto/meta-yocto-bsp \
   ${OEROOT}/layers/meta-mediatek-bsp \
   ${OEROOT}/layers/meta-rity/meta \
+  ${OEROOT}/layers/meta-mediatek-bluedroid \
   ${OEROOT}/layers/meta-lmp/meta-lmp-bsp \
 "
 
