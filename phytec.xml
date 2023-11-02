@@ -6,8 +6,9 @@
     <remote fetch="https://source.foundries.io/factories/phytec"
             name="subscriber-overrides" />
 
+    <!-- https://git.phytec.de/meta-phytec/commit/?h=BSP-Yocto-Ampliphy-AM62x-PD23.2.0&id=6fb1664f937969d726f929c3b6a7490272fa0d5f //-->
     <project name="meta-phytec"
-             revision="3205f9a905517441a54f24b0baf7eec6448b4422"
+             revision="6fb1664f937969d726f929c3b6a7490272fa0d5f"
              path="layers/meta-phytec"
              remote="phytec"/>
     <project name="meta-partner-phytec"
