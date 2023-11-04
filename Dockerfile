@@ -23,7 +23,7 @@ RUN wget -P /tmp https://go.dev/dl/go1.19.9.linux-amd64.tar.gz && \
 ENV PATH /usr/local/go/bin:$PATH
 
 RUN git clone https://github.com/foundriesio/ostreeuploader.git /ostreeuploader && \
-    cd /ostreeuploader && git checkout -q 2023.5 && \
+    cd /ostreeuploader && git checkout -q 2023.6 && \
     cd /ostreeuploader && make
 
 
@@ -56,7 +56,7 @@ RUN apt-get update \
 		make patch repo sudo texinfo vim-tiny wget whiptail libelf-dev git-lfs screen \
 		socket corkscrew curl xz-utils tcl libtinfo5 device-tree-compiler python3-pip python3-dev \
 		tmux libncurses-dev vim zstd lz4 liblz4-tool libc6-dev-i386 \
-		awscli docker-compose gosu \
+		awscli docker-compose gosu xvfb python3-cairo python3-gi-cairo yaru-theme-icon \
 	&& ln -s /usr/bin/python3 /usr/bin/python \
 	&& pip3 --no-cache-dir install expandvars jsonFormatter \
 	&& apt-get autoremove -y \
