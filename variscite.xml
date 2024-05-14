@@ -10,7 +10,7 @@
            revision="b59aa8a000ff59aa0222ab134259dcf5c3e38881"
            path="layers/meta-variscite-bsp"
            remote="varigit"/>
-  <project name="meta-partner-variscite"
+  <project name="meta-partner"
            revision="2046f69eaf2b4ee71667339344b8dbe86c0c8e18"
            path="layers/meta-partner-variscite"
            remote="partner-variscite"/>
