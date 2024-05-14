@@ -2,8 +2,8 @@
     <include name="default.xml" />
 
     <remote fetch="https://gitlab.com/mediatek/aiot/rity" name="mediatek"/>
-    <remote fetch="https://source.foundries.io/factories/mediatek"
-            name="subscriber-overrides" />
+    <remote fetch="https://github.com/foundriesio"
+            name="partner-mediatek" />
 
     <remove-project name="meta-freescale"/>
     <remove-project name="meta-freescale-3rdparty"/>
@@ -27,8 +27,8 @@
              revision="71ae5cfbc089d1a1c64e3e76e316f4982635cb1a"
              path="layers/meta-mediatek-bluedroid"
              remote="mediatek"/>
-    <project name="meta-partner-mediatek"
+    <project name="meta-partner"
              revision="a0b5a792bfef592419412f42245e6cecb7d78107"
              path="layers/meta-partner-mediatek"
-             remote="subscriber-overrides"/>
+             remote="partner-mediatek"/>
 </manifest>
