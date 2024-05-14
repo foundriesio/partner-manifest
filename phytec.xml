@@ -3,16 +3,16 @@
 
     <remote fetch="https://github.com/phytec"
             name="phytec" />
-    <remote fetch="https://source.foundries.io/factories/phytec"
-            name="subscriber-overrides" />
+    <remote fetch="https://github.com/foundriesio"
+            name="partner-phytec" />
 
     <!-- https://git.phytec.de/meta-phytec/commit/?h=BSP-Yocto-Ampliphy-AM62x-PD23.2.0&id=6fb1664f937969d726f929c3b6a7490272fa0d5f //-->
     <project name="meta-phytec"
              revision="6fb1664f937969d726f929c3b6a7490272fa0d5f"
              path="layers/meta-phytec"
              remote="phytec"/>
-    <project name="meta-partner-phytec"
+    <project name="meta-partner"
              revision="9df63b56617584d7128bee57ec9474f9cf245f63"
              path="layers/meta-partner-phytec"
-             remote="subscriber-overrides"/>
+             remote="partner-phytec"/>
 </manifest>
