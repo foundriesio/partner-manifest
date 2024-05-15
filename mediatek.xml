@@ -28,7 +28,7 @@
              path="layers/meta-mediatek-bluedroid"
              remote="mediatek"/>
     <project name="meta-partner"
-             revision="a0b5a792bfef592419412f42245e6cecb7d78107"
+             revision="c281202da8c8ca93b82694a3b2764cecd0e5674c"
              path="layers/meta-partner-mediatek"
              remote="partner-mediatek"/>
 </manifest>
