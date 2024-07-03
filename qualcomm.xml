@@ -3,6 +3,12 @@
 
     <remote fetch="https://source.foundries.io/factories/qualcomm"
             name="subscriber-overrides" />
+    <remote fetch="https://github.com/quic-yocto" name="quic"/>
+
+    <!-- Release QLI.1.1-Ver.1.0 https://github.com/quic-yocto/qcom-manifest/blob/qcom-linux-kirkstone/qcom-6.6.28-QLI.1.1-Ver.1.0.xml //-->
+    <project name="meta-selinux" revision="a401f4b2816a0b41ce8d9351542658c721935bcd" path="layers/meta-selinux"/>
+    <project name="meta-qcom" revision="083e0f8d7f0528bdc5c3a9fa4133c7a0f101bd91" path="layers/meta-qcom"/>
+    <project name="meta-qcom-hwe" revision="f93202d53741d87178a43145fb06b5042c06a32a" path="layers/meta-qcom-hwe" remote="quic"/>
 
     <project name="meta-partner-qualcomm"
              revision="main"
