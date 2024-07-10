@@ -1,5 +1,5 @@
 <manifest>
-    <include name="default.xml" />
+    <include name="lmp-base.xml" />
 
     <remote fetch="https://source.foundries.io/factories/qualcomm"
             name="subscriber-overrides" />
