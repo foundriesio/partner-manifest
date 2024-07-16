@@ -11,7 +11,7 @@
     <project name="meta-qcom-hwe" revision="f93202d53741d87178a43145fb06b5042c06a32a" path="layers/meta-qcom-hwe" remote="quic"/>
 
     <project name="meta-partner-qualcomm"
-             revision="main"
+             revision="547df431b4d2b4db95d90d16470585dfaba33028"
              path="layers/meta-partner-qualcomm"
              remote="subscriber-overrides"/>
 </manifest>
