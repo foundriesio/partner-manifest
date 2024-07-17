@@ -5,17 +5,17 @@
 
   <default remote="lmp-mirrors" revision="master" sync-j="4"/>
 
-  <project name="bitbake" revision="ee090484cc25d760b8c20f18add17b5eff485b40"/>
+  <project name="bitbake" revision="5a90927f31c4f9fccbe5d9d07d08e6e69485baa8"/>
   <project name="lmp-tools" path="tools/lmp-tools" remote="fio">
     <linkfile dest="setup-environment" src="setup-environment"/>
   </project>
-  <project name="meta-lmp" path="layers/meta-lmp" remote="fio" revision="1be292cf3484f1a9fb4d7bea3c61cf45cd318264"/>
-  <project name="meta-clang" path="layers/meta-clang" revision="312ff1c39b1bf5d35c0321e873417eb013cea477"/>
-  <project name="meta-openembedded" path="layers/meta-openembedded" revision="8609de00952d65bb813a48c535c937324efeb18a"/>
-  <project name="meta-lts-mixins" path="layers/meta-lts-mixins-go" revision="ab095f7f1ed2615cf8533f4657e9f7f176dfb4de"/>
-  <project name="meta-lts-mixins" path="layers/meta-lts-mixins-rust" revision="ead509ebe28cb9b588d401c5f254159cd6c5d39a"/>
-  <project name="meta-security" path="layers/meta-security" revision="1a3e42cedbd94ca73be45800d0e902fec35d0f0f"/>
-  <project name="meta-updater" path="layers/meta-updater" revision="3473dc7c88a16cea2e9a6365e22c2331464078f1"/>
-  <project name="meta-virtualization" path="layers/meta-virtualization" revision="88327090d26955a678c6f8bd2585aad4d802f6c4"/>
-  <project name="openembedded-core" path="layers/openembedded-core" revision="59cc2e75c15f8c6371a4c4a3b7bd2e6c3f145fbc"/>
+  <project name="meta-lmp" path="layers/meta-lmp" remote="fio" revision="4d5790248be13a927b20e34f97fc1f1d8c928b02"/>
+  <project name="meta-clang" path="layers/meta-clang" revision="557663d9e9fa34fa2b860696ce5a5d8744ade8f6"/>
+  <project name="meta-openembedded" path="layers/meta-openembedded" revision="6ff0748a4741517519a281985fc3cd95dadb633e"/>
+  <project name="meta-lts-mixins" path="layers/meta-lts-mixins-go" revision="6b10782a1e5760d1dd5d33d561e6367b5f971d8e"/>
+  <project name="meta-lts-mixins" path="layers/meta-lts-mixins-rust" revision="1a6746a81da4d5bf2e5640fd2fa8f3ea453d40bf"/>
+  <project name="meta-security" path="layers/meta-security" revision="353078bc06c8b471736daab6ed193e30d533d1f1"/>
+  <project name="meta-updater" path="layers/meta-updater" revision="6c4feab2db70cb0c8ddce7e18dc7b851ad475b32"/>
+  <project name="meta-virtualization" path="layers/meta-virtualization" revision="8b356b91ed0d4bcab72350a2ddcef880f4fa5c26"/>
+  <project name="openembedded-core" path="layers/openembedded-core" revision="8e650506885bc4465f9569b3ccdc327eb83d90db"/>
 </manifest>
