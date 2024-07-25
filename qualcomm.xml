@@ -10,6 +10,8 @@
     <project name="meta-qcom" revision="083e0f8d7f0528bdc5c3a9fa4133c7a0f101bd91" path="layers/meta-qcom"/>
     <project name="meta-qcom-hwe" revision="8437631082dfa896de8451441d1da9d4f37f0a93" path="layers/meta-qcom-hwe" remote="quic"/>
 
+    <project name="meta-qcom-qim-product-sdk" revision="ee795f3b075110ebf7b48f5eee7c952e7d7cf125" path="layers/meta-qcom-qim-product-sdk" remote="fio"/>
+
     <project name="meta-partner"
              revision="503d2ff9df0bf8b954893baede4ee39927254d66"
              path="layers/meta-partner-qualcomm"

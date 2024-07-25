@@ -4,11 +4,13 @@
 BASELAYERS += " \
   ${OEROOT}/layers/meta-selinux \
   ${OEROOT}/layers/meta-partner-qualcomm \
+  ${OEROOT}/layers/meta-openembedded/meta-multimedia \
 "
 
 BSPLAYERS = " \
   ${OEROOT}/layers/meta-qcom \
   ${OEROOT}/layers/meta-qcom-hwe \
+  ${OEROOT}/layers/meta-qcom-qim-product-sdk \
   ${OEROOT}/layers/meta-lmp/meta-lmp-bsp \
 "
 
