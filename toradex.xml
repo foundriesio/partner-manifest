@@ -1,7 +1,7 @@
 <manifest>
     <include name="default.xml" />
 
-    <remote fetch="https://source.foundries.io/factories/toradex"
+    <remote fetch="https://github.com/foundriesio"
             name="toradex-partner" />
     <remote fetch="https://git.toradex.com"
             name="toradex-git" />
@@ -15,7 +15,8 @@
              revision="0e6c25e8c7ad105daf6c8737fbdee1c97c4edb41"
              path="layers/meta-toradex-nxp"
              remote="toradex-git"/>
-    <project name="meta-partner-toradex"
+
+    <project name="meta-partner"
              revision="5d8f59a89c202f8ac7eecb70f49c5e42c1ac1853"
              path="layers/meta-partner-toradex"
              remote="toradex-partner"/>
