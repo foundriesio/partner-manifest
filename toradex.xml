@@ -17,7 +17,7 @@
              remote="toradex-git"/>
 
     <project name="meta-partner"
-             revision="5d8f59a89c202f8ac7eecb70f49c5e42c1ac1853"
+             revision="6209ecd35839c99c1fbb724a007f0ce6ded6e44c"
              path="layers/meta-partner-toradex"
              remote="toradex-partner"/>
 </manifest>
