@@ -8,7 +8,7 @@
     <!-- Release QLI.1.1-Ver.1.1 https://github.com/quic-yocto/qcom-manifest/blob/qcom-linux-kirkstone/qcom-6.6.28-QLI.1.1-Ver.1.1.xml //-->
     <project name="meta-selinux" revision="a401f4b2816a0b41ce8d9351542658c721935bcd" path="layers/meta-selinux"/>
     <project name="meta-qcom" revision="083e0f8d7f0528bdc5c3a9fa4133c7a0f101bd91" path="layers/meta-qcom"/>
-    <project name="meta-qcom-hwe" revision="8437631082dfa896de8451441d1da9d4f37f0a93" path="layers/meta-qcom-hwe" remote="quic"/>
+    <project name="meta-qcom-hwe" revision="a4910c8f1c57177b510440f86cde6338117853b8" path="layers/meta-qcom-hwe" remote="quic"/>
 
     <project name="meta-qcom-qim-product-sdk" revision="ee795f3b075110ebf7b48f5eee7c952e7d7cf125" path="layers/meta-qcom-qim-product-sdk" remote="fio"/>
 
