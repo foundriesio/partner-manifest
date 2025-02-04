@@ -1,0 +1,11 @@
+<manifest>
+    <include name="default.xml" />
+
+    <remote fetch="https://source.foundries.io/factories/amd-xilinx"
+            name="subscriber-overrides" />
+
+    <project name="meta-partner-amd-xilinx"
+             revision="main"
+             path="layers/meta-partner-amd-xilinx"
+             remote="subscriber-overrides"/>
+</manifest>
