@@ -1,8 +1,15 @@
 <manifest>
     <include name="default.xml" />
 
+    <remote fetch="https://github.com/foundriesio" name="fio"/>
     <remote fetch="https://source.foundries.io/factories/amd-xilinx"
             name="subscriber-overrides" />
+
+    <!-- Release xlnx-rel-v2022.1_update1: https://github.com/Xilinx/yocto-manifests/blob/xlnx-rel-v2022.1_update1/default.xml //-->
+    <!-- NOTE: meta-xilinx: backed up about 20 patches before any "Update SRCREV for 2022.2" @ 4017b1fb18dc59d108e880315c28f10d93058f8c //-->
+    <!-- NOTE: meta-xilinx-tools: backed up 1 patches @ 6ae050e052fca5cb55b741d00ca42160978d584e //-->
+    <project name="meta-xilinx" path="layers/meta-xilinx" remote="fio" revision="f8d8efab12040712df32436643621b2756de1f76"/>
+    <project name="meta-xilinx-tools" path="layers/meta-xilinx-tools" remote="fio" revision="9acf9d1d02f465b3c435283f92557b632becc72a"/>
 
     <project name="meta-partner-amd-xilinx"
              revision="main"
