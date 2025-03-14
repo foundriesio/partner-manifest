@@ -10,7 +10,7 @@
     <project name="meta-xilinx-tools" path="layers/meta-xilinx-tools" remote="xilinx" revision="485c78a9a0655c4399d3eeed42cbfd2f96a396d5"/>
 
     <project name="meta-partner"
-             revision="main"
+             revision="07e50df93bdd68a80ebe2439f23dfeeeaa199ac1"
              path="layers/meta-partner-amd-xilinx"
              remote="partner-amd-xilinx"/>
 </manifest>
