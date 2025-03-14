@@ -2,15 +2,15 @@
     <include name="default.xml" />
 
     <remote fetch="https://github.com/Xilinx" name="xilinx"/>
-    <remote fetch="https://source.foundries.io/factories/amd-xilinx"
-            name="subscriber-overrides" />
+    <remote fetch="https://github.com/foundriesio"
+            name="partner-amd-xilinx" />
 
     <!-- Release xlnx-rel-v2024.2_update3: https://github.com/Xilinx/yocto-manifests/blob/xlnx-rel-v2024.2_update3/default.xml //-->
     <project name="meta-xilinx" path="layers/meta-xilinx" remote="xilinx" revision="4c406f5db39d2a255dc86e87dd8ffed2770722b5"/>
     <project name="meta-xilinx-tools" path="layers/meta-xilinx-tools" remote="xilinx" revision="485c78a9a0655c4399d3eeed42cbfd2f96a396d5"/>
 
-    <project name="meta-partner-amd-xilinx"
+    <project name="meta-partner"
              revision="main"
              path="layers/meta-partner-amd-xilinx"
-             remote="subscriber-overrides"/>
+             remote="partner-amd-xilinx"/>
 </manifest>
