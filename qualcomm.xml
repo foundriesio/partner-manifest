@@ -8,7 +8,7 @@
     <!-- Release QLI.1.5-Ver.1.1 https://github.com/qualcomm-linux/qcom-manifest/blob/qcom-linux-scarthgap/qcom-6.6.90-QLI.1.5-Ver.1.1.xml //-->
     <project name="meta-selinux" revision="4fbbcab2cb452c9430cba780e7cb11b2165c997a" path="layers/meta-selinux"/>
     <project name="meta-qcom" revision="ec80a36bce11d8182b4bb2a6fa0359adfeccde0a" path="layers/meta-qcom" remote="qclinux"/>
-    <project name="meta-qcom-hwe" revision="4d158b3a553312a95cd31e4ac511bb0dc0b16379" path="layers/meta-qcom-hwe" remote="qclinux"/>
+    <project name="meta-qcom-hwe" revision="a5fdd68fe7111e9666d39e42980d270ca9f83bcf" path="layers/meta-qcom-hwe" remote="qclinux"/>
 
     <project name="meta-qcom-qim-product-sdk" revision="d71e64d1581728872f74815ef5696e41d5469412" path="layers/meta-qcom-qim-product-sdk" remote="fio"/>
 
