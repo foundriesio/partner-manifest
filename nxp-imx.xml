@@ -1,0 +1,11 @@
+<manifest>
+    <include name="default.xml" />
+
+    <remote fetch="https://source.foundries.io/factories/nxp-imx"
+            name="subscriber-overrides" />
+
+    <project name="meta-partner-nxp-imx"
+             revision="main"
+             path="layers/meta-partner-nxp-imx"
+             remote="subscriber-overrides"/>
+</manifest>
