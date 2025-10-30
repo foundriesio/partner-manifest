@@ -13,7 +13,7 @@
     <project name="meta-qcom-qim-product-sdk" revision="568595aa01cb7c0cf7371696203fb1d19d0879ed" path="layers/meta-qcom-qim-product-sdk" remote="fio"/>
 
     <project name="meta-partner"
-             revision="778fb8414958826498d767c42590fdde1a86d831"
+             revision="2ce90156038f93357465273dd973fe70919110bd"
              path="layers/meta-partner-qualcomm"
              remote="partner-qualcomm"/>
 </manifest>
