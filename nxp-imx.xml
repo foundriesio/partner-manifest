@@ -4,6 +4,10 @@
     <remote fetch="https://github.com/foundriesio"
             name="partner-nxp-imx" />
 
+    <!-- Use scarthgap branch commits taken from LmP 95.2 release //-->
+    <project name="meta-freescale" path="layers/meta-freescale" revision="281202125dee44b45ddd56822e43af9c007e4d3d"/>
+    <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="70c83e96c7f75e73245cb77f1b0cada9ed4bbc6d"/>
+
     <project name="meta-partner"
              revision="main"
              path="layers/meta-partner-nxp-imx"
