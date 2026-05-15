@@ -9,7 +9,7 @@
     <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="70c83e96c7f75e73245cb77f1b0cada9ed4bbc6d"/>
 
     <project name="meta-partner"
-             revision="83a1194afe91e7ec8c305a70e8de46855d30fa7e"
+             revision="6616143705c058c1a0677caa9ab62852201646a9"
              path="layers/meta-partner-nxp-imx"
              remote="partner-nxp-imx"/>
 </manifest>
